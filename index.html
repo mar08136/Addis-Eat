@@ -1,0 +1,771 @@
+<!DOCTYPE html>
+<html lang="en">
+<header>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Adiss Eats - discover and order your favorite food around Adiss Ababa.">
+    <title>Adiss Eats</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Outfit:wght@400;500;600;700;800;900&family=Pacifico&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+</header>
+
+<body>
+    <div class="loader" id="loader">
+        <div class="loader-logo">Addis Eats</div>
+        <div class="loader-spinner"></div>
+    </div>
+    <header>
+        <nav>
+            <a href="#" class="logo">
+                Addis Eats
+            </a>
+            <button type="button" id="nav-toggle" class="nav-toggle" aria-label="Toggle navigation menu"
+                aria-expanded="false">
+                <span class="nav-toggle-icon"></span>
+            </button>
+            <div class="nav-links" id="nav-links">
+                <a href="#home">Home</a>
+                <a href="#categories">Explore</a>
+                <a href="#popular">Popular</a>
+                <a href="#offers">Offers</a>
+                <a href="#tracking">Track Order</a>
+                <a href="./admin-dashboard.html">Admin</a>
+            </div>
+            <div class="nav-actions">
+                <button type="button" id="search-button" aria-label="Search">
+                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAACXBIWXMAAAsTAAALEwEAmpwYAAACsUlEQVR4nO2ZPWtUURCGbxqNuAoikqRNRNPaCBb5MuQXWCaKKIQI+Q8GLZLYpzeCIJbJko9WCz8SS402NnbGVBF1N+Ijhwx4HE+Ou5s5u3f1PrCwLNx55+XeuTNzNssKCvIH0APcBB4Ar4BPQFU+28AmsAjcALqzvAEMA2XgO7WzBywDg3kwcBZY4/CsAH2tMnEN+Iwdu8BEs03ciST0BpgFRoHzwHH59Mtvc8BW5PqZZpm4e0ACL4CROuJcAp62xAz7j5OmAkwCHQ3E6wCmJIZmPGVh65pwr9cBg9iDwE6gZnptsv9dTL+dKhYmvPhD0m98ylbx/T6hmTQV2de5FdAZsBRwzc7neSM1UWPNvFRaS5Zjh+vCPkMmwcN6I0prD+iyCOxmJ5/XJhnHNd8qzesWQd0A6DNrkm1cc15p3rcI6qZYn1GTbOOaY0pzwyKo6xU+50yyjWu60cbno0VQ3XVLJtnGNUtK81sKIydMso1rnlSau//Ko/XeIuhmDor9mUVQt2P7zJlkG9e8pzQXUjTELZNs45rvlOYVi6DdgRFl2CTjsJ7bIn0qwGmr4O60Q2+DqYZGXZOLlgJu8dFMmQn80pkO6FywFnFHNj5VyzMpmXr1YvXQKr4v1Cfrp8+OxUgvi5tedd3J5Bmb7P8UnAjc+qpsdo0ePkwH7oTjCXAkiRERnyHMBnC5zreTLmzNCtDZCjPIUjQv3blfBsCSfB+TZqf7RIyl1HdmPFAzqVgGjqY00xs4mKiXH8BjYL2lZhzuyEYeAT0BxPgKPAIuSoxOYPUv15STm5FkutxBgduxpfi3ZcT4AnyQo54F4CpwKnB9fswcFlfYgZFIs5r0bdZkM2uFmWbDf2hmHTiW5R1qe5s19//HRHfmdtZOEDbTXiYOMNOeJlTNpPmztKAgi/IT6aP4DmP36S8AAAAASUVORK5CYII="
+                        alt="search--v1">
+                </button>
+                <button type="button" id="favorites-button" aria-label="Favorites">
+                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAACXBIWXMAAAsTAAALEwEAmpwYAAABn0lEQVR4nO2Uu0oDQRSGNxYhKGpnF/Q5rIyFpBG08VKqYLyAL6CtaOUtRNRnsNB0oj6A4jtEC2PQRm1UFD4ZchaGYXazm+xEEQ8sJPv/53z/zOyu5/3Xf/3GAjqAaaAMVIEv4BG4AGaAjKUnA8wCl8CT9KjeU2BSzYwKHwBuCK8aMKb1jMu9sLoG+qPAa9JQAeaBLJAWbRm404auAxva/1tgSbxp6V2Q+6oeAkNQ33Z/5WdAd4BPbfUa8KmB1e9V29FITw9wLt4r63EAU9rKrXDDPwy8AM9ALoK/V9u9CZuhLGKh0TCtZ0hdMfyLwjixiVURs56jUucvjHub+CFip8MAXcJ4t4kVEQcdBsj5z5lN3BHx2GEA9XapKtrEPuBVDHMO4AWZ/Rb4nFH/aPimfILwvDp3mb3SyLyVZAiBq1mqtqM2bUqDejNGW4CPxIYnFcKAqwc8FXdACthtJoQBP4gNbyVEYvBmQhjww5bhRoi9sBDO4FFCGPCjxOFhIdoGN0KUtI+VDy85hxshigJuz8oDQuzL1V64EeJn4N5fqW8/roA/jQ8o9QAAAABJRU5ErkJggg=="
+                        alt="like--v1">
+                </button>
+                <button type="button" id="cart-button" aria-label="Shopping cart">
+                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAACXBIWXMAAAsTAAALEwEAmpwYAAABCUlEQVR4nO2UsUrDUBSGs+kTdHCyc9cGzGsI9TEcMtixi2kFQRy71y527dJNEGyfoEPXTJY4tCoq2H4leAqXYJrk3Agd/OFO5z/n4z/3ch3nX1kC+sA3MAVOnbIFRJSvFdDbAupAG/gqGbJIJnmSQpzoyuK8yJzHJOBGCp/AoXLdB9If6zpZbBjxPCXgxJhxliweGUVfCTg3Zhz/ZgilOFAC7qR/nma4F0OoBMykf5hm8I2ILaBZ4HSN3os0gIe9noFKnmdWVO/ACKhl7XEsDRPFNWQL6AhgDdwWvAc3D6Aa/yPKNUV5U7jAA/Ch+kH3Rvx8429AYOPZBXiV+Esbzy5AIAMubTx/qg2lQWlKxKOwrAAAAABJRU5ErkJggg=="
+                        alt="shopping-cart">
+                    <span id="cart-count" class="hidden">0</span>
+                </button>
+                <button type="button" id="theme-button" aria-label="Toogle Theme">
+                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAACXBIWXMAAAsTAAALEwEAmpwYAAADA0lEQVR4nNWaO2gVQRSG4yOg0dwggdiI+ChyBV+NjyA2sZUkgpWVCjZekSgi2NtYqFHRJoilWAhRIwpqYyEmUUGSGyWawpjggyhGifH9yeAIl8vO7szO2TvcHy7cZv9zvt09wzkzW1MjKGAlsAc4A9wBhoGPwHf+aQqYBJ4Dd4GLwCFgCzBfMpc0ya8GTgCj+OkrcEPfiAWVBGgF7pGNPgGngMVZAqjXp5fK6AtwDJgrDbEbmKby6geWSQDMAS4QVu+ATT4QtcAVjwT6gI3APJUIMODhNaW80oJ0ewQeB3JlfjlgwsPzLbDEFaITP+03+BY8fW+7QOSBGc+AzQbvVfir3QZiFvBAIFidwb9OwHsUmJ0E0iZUwHnHJ9LnuDC0JoE8ESpgU40c8PT9r+44iA3IFXBUcg2O0IWYXJ7GgZxPAHF9XdTrsVl1t0AL8FjIV+lzHMhEoAJO4zttgmi2CJjmzpGR77gJZJ9FQJcCdlEa30ETSJdFQJcCdlEa38smkJuWQW0L2FUDjr6dJpBnVJfyJpA3VI/uR0JoENXvV4u2x4H8ojrUa4TQIGpLppITXxq9ApqSQN4HmPhc5/Y1sRA6qaFAE5+NXhpXqYiErgWc+OJ0HVhkBaETUlufoSa+KP0AjqiJ1RpCJ7QjUMNoqscWJ4CShJqAPwEaxnJNqpuTCqIkqf4ADWO5Cl4QOrGjgRrGUm2TAFkK/CSsDnqDaJirgUEeSoFsFUxqSO+T1euf+l+0uG6tFMwtIYhchHfOAua0FMh6gW64Lca/PeHaYREQHeykJ0h9jLd6KnGakQRRrceLQCAfxEB0wHUe54bGrX+gI+HaQVEQHXRXQutiUtFQ7A0WGx094iCep1dFXdg5/evQX0QkaW8mICXtS5on46pvQGNmIBpmp8CRXJKOZwpRAqM2H0YyghgxDXBZwSwEzgo3mK+B5RWDiJgOe4DfnhDq8HVFEIiIj21UJzDmCDCmV0TZD2ckpPu0w8Al4JFOVm3HqhVP7S+rYeycXpZrJYL+BQv8MS2TmPtDAAAAAElFTkSuQmCC"
+                        alt="paint-palette">
+                </button>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <section class="hero" id="home">
+
+            <div class="hero-content">
+
+                <h1>
+                    Good Food.
+                    <br>
+                    Right Around
+                    <br>
+                    <span>ADDIS.</span>
+                </h1>
+
+                <p>
+                    Your favorite meals, delivered fast
+                    <Br>
+                    to your doorstep anywhere in Addis Ababa.
+                </p>
+
+                <form class="hero-search">
+                    <label for="food-search">Search for food</label>
+
+                    <input type="search" id="menu-search" placeholder="Search for food, cuisine, drinks...">
+
+                    <button type="submit" aria-label="Search">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <circle cx="11" cy="11" r="7"></circle>
+                            <line x1="16.5" y1="16.5" x2="21" y2="21"></line>
+                        </svg>
+                    </button>
+                </form>
+
+                <div class="hero-actions">
+
+                    <a href="#categories">
+                        Explore Menu
+                        <span class="arrow">→</span>
+                    </a>
+
+                    <a href="#popular">
+                        <span class="popular-icon">★</span>
+                        View Popular
+                    </a>
+
+                </div>
+
+            </div>
+
+            <div class="hero-visual">
+
+                <img src="images/hero-food.jpg" alt="A selection of delicious food">
+            </div>
+            <div class="hero-features">
+
+                <div class="feature">
+                    <span class="feature-icon">⚡</span>
+                    <div>
+                        <h3>Fast Delivery</h3>
+                        <p>Hot food, delivered fast</p>
+                    </div>
+                </div>
+
+                <div class="feature">
+                    <span class="feature-icon">★</span>
+                    <div>
+                        <h3>Best Quality</h3>
+                        <p>Fresh meals every time</p>
+                    </div>
+                </div>
+
+                <div class="feature">
+                    <span class="feature-icon">📍</span>
+                    <div>
+                        <h3>Live Tracking</h3>
+                        <p>Know where your order is</p>
+                    </div>
+                </div>
+
+                <div class="feature">
+                    <span class="feature-icon">✓</span>
+                    <div>
+                        <h3>Safe Payment</h3>
+                        <p>Secure and easy checkout</p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+        <section class="categories" id="categories">
+            <div class="section-heading">
+                <h2>Explore by category</h2>
+                <a href="#">View all</a>
+            </div>
+            <div class="category-grid">
+                <a href="#" class="category-card">
+                    <img src="images/fast-food.png">
+                    <h3>Fast Food</h3>
+                </a>
+                <a href="#" class="category-card">
+                    <img src="images/chicken & fish.png">
+                    <h3>Chicken & Fish</h3>
+                </a>
+                <a href="#" class="category-card">
+                    <img src="images/sweets.png">
+                    <h3>Sweets</h3>
+                </a>
+                <a href="#" class="category-card">
+                    <img src="images/breakfast.png">
+                    <h3>Breakfast</h3>
+                </a>
+                <a href="#" class="category-card">
+                    <img src="images/drinks.png">
+                    <h3>Drinks</h3>
+                </a>
+                <a href="#" class="category-card">
+                    <img src="images/traditional.jpeg" alt="Traditional Ethiopian food">
+                    <h3>Traditional Food</h3>
+                </a>
+            </div>
+        </section>
+        <section class="popular" id="popular">
+            <div class="section-heading">
+                <div>
+                    <span class="section-label">CUSTOMER FAVORITE</span>
+                    <h2>Popular Near You</h2>
+                </div>
+                <a href="#menu">View all</a>
+            </div>
+            <div class="food-grid" id="popular-grid">
+
+            </div>
+        </section>
+        <section class="offers" id="offers">
+
+            <div class="section-heading">
+
+                <div>
+                    <span class="section-label">TODAY'S DEALS</span>
+                    <h2>Special Offers</h2>
+                </div>
+
+                <a href="#">View all</a>
+
+            </div>
+
+
+            <div class="offer-grid">
+                <article class="offer-card">
+
+                    <img src="images/offer-burger.png" alt="Burger and fries">
+                    <span class="discount">20% OFF</span>
+                    <div class="offer-content">
+
+                        <h3>On All Burgers</h3>
+
+                        <p>Limited time offer</p>
+
+                        <a href="#menu" class="offer-button">
+                            Order Now <span>→</span>
+                        </a>
+
+                    </div>
+
+                </article>
+                <article class="offer-card">
+
+                    <img src="images/offer-pizza.png" alt="Pepperoni pizza">
+                    <span class="discount">15% OFF</span>
+                    <div class="offer-content">
+
+                        <h3>On Orders Above<br>800 ETB</h3>
+
+                        <a href="#menu" class="offer-button">
+                            Order Now <span>→</span>
+                        </a>
+
+                    </div>
+
+                </article>
+                <article class="offer-card">
+
+                    <img src="images/offer-delivery.png" alt="Food delivery rider on a scooter">
+
+                    <div class="offer-content">
+
+                        <h3>Free Delivery</h3>
+
+                        <p>
+                            On Orders Above<br>
+                            1,200 ETB
+                        </p>
+
+                        <a href="#menu" class="offer-button">
+                            Order Now <span>→</span>
+                        </a>
+
+                    </div>
+
+                </article>
+
+            </div>
+
+        </section>
+
+        <section class="menu" id="menu">
+
+            <div class="section-heading">
+
+                <div>
+                    <span class="section-label">EXPLORE OUR MENU</span>
+                    <h2>Find Your Favorite</h2>
+                </div>
+
+            </div>
+            <div class="menu-filters" id="menu-filters">
+                <button data-category="all" type="button" class="filter-btn active">
+                    All
+                </button>
+                <button data-category="fast-food" type="button" class="filter-btn">
+                    Fast Food
+                </button>
+
+                <button data-category="chicken-fish" type="button" class="filter-btn">
+                    Chicken & Fish
+                </button>
+
+                <button data-category="sweets" type="button" class="filter-btn">
+                    Sweets
+                </button>
+                <button data-category="breakfast" type="button" class="filter-btn">
+                    Breakfast
+                </button>
+                <button data-category="drinks" type="button" class="filter-btn">
+                    Drinks
+                </button>
+                <button data-category="traditional-food" type="button" class="filter-btn">
+                    Traditional Food
+                </button>
+            </div>
+            <div class="menu-grid" id="menu-grid">
+
+            </div>
+        </section>
+        <section class="features" id="features">
+
+            <div class="section-heading">
+
+                <div>
+                    <span class="section-label">WHY ADDIS EATS</span>
+                    <h2>More Than Just Food Delivery</h2>
+                </div>
+
+            </div>
+
+
+            <div class="feature-grid">
+
+                <article class="feature-card">
+
+                    <div class="feature-icon">
+                        ⚡
+                    </div>
+
+                    <h3>Fast Delivery</h3>
+
+                    <p>
+                        Get your favorite meals delivered
+                        quickly around Addis Ababa.
+                    </p>
+
+                </article>
+
+
+                <article class="feature-card">
+
+                    <div class="feature-icon">
+                        ⭐
+                    </div>
+
+                    <h3>Quality Food</h3>
+
+                    <p>
+                        Discover delicious meals from
+                        restaurants you can trust.
+                    </p>
+
+                </article>
+
+
+                <article class="feature-card">
+
+                    <div class="feature-icon">
+                        📍
+                    </div>
+
+                    <h3>Live Tracking</h3>
+
+                    <p>
+                        Follow your order from the restaurant
+                        to your doorstep.
+                    </p>
+
+                </article>
+
+
+                <article class="feature-card">
+
+                    <div class="feature-icon">
+                        🔒
+                    </div>
+
+                    <h3>Secure Payment</h3>
+
+                    <p>
+                        Enjoy a simple and secure
+                        checkout experience.
+                    </p>
+
+                </article>
+
+            </div>
+
+        </section>
+        <section class="tracking" id="tracking">
+
+            <div class="tracking-content">
+
+                <span class="section-label">
+                    ORDER TRACKING
+                </span>
+
+                <h2>
+                    Track Your Order
+                </h2>
+
+                <p>
+                    Enter your order ID to see the latest
+                    update on your delivery.
+                </p>
+
+
+                <form class="tracking-form" id="tracking-form">
+
+                    <label for="order-id">
+                        Order ID
+                    </label>
+
+                    <div class="tracking-input">
+
+                        <input type="text" id="order-id" name="order-id" placeholder="e.g. AE-10245">
+
+                        <button type="submit">
+                            Track Order
+                        </button>
+
+                    </div>
+
+                </form>
+
+            </div>
+
+
+            <div class="tracking-visual">
+
+                <div class="tracking-circle">
+                    <span>📍</span>
+                </div>
+
+                <div class="tracking-status">
+
+                    <span class="status-dot"></span>
+
+                    <div>
+                        <strong>On the way</strong>
+                        <small>Your order is being delivered</small>
+                    </div>
+
+                </div>
+
+            </div>
+            <div class="order-progress">
+
+                <div class="progress-heading">
+
+                    <span class="section-label">
+                        ORDER STATUS
+                    </span>
+
+                    <h3>
+                        Your Order Progress
+                    </h3>
+                    <p>
+                        Follow your order every step of the way.
+                    </p>
+
+                </div>
+                <div class="progress-track">
+                    <div class="progress-line"></div>
+                    <div class="progress-step active">
+                        <div class="progress-icon">
+                            ✓
+                        </div>
+                        <div class="progress-info">
+                            <strong>Confirmed</strong>
+                            <small>Your order has been received</small>
+                        </div>
+                    </div>
+                    <div class="progress-step">
+                        <div class="progress-icon">
+                            🍳
+                        </div>
+                        <div class="progress-info">
+                            <strong>Preparing</strong>
+                            <small>The restaurant is preparing your food</small>
+                        </div>
+                    </div>
+                    <div class="progress-step">
+                        <div class="progress-icon">
+                            🛵
+                        </div>
+                        <div class="progress-info">
+                            <strong>On the Way</strong>
+                            <small>Your order is being delivered</small>
+                        </div>
+                    </div>
+                    <div class="progress-step">
+                        <div class="progress-icon">
+                            ✓
+                        </div>
+                        <div class="progress-info">
+                            <strong>Delivered</strong>
+                            <small>Your order has arrived</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+
+        <div class="footer-container">
+
+            <div class="footer-brand">
+
+                <a href="#home" class="logo">
+                    Addis<span>Eats</span>
+                </a>
+
+                <p>
+                    Good food, right around Addis.
+                    We connect you to the best restaurants
+                    across Addis Ababa.
+                </p>
+
+                <div class="footer-socials">
+                    <a href="#" aria-label="Facebook">f</a>
+                    <a href="#" aria-label="Instagram">◎</a>
+                    <a href="#" aria-label="TikTok">♪</a>
+                    <a href="#" aria-label="Telegram">➤</a>
+                </div>
+
+            </div>
+
+
+            <div class="footer-column">
+
+                <h3>Quick Links</h3>
+
+                <a href="#home">Home</a>
+                <a href="#menu">Explore</a>
+                <a href="#popular">Popular</a>
+                <a href="#offers">Offers</a>
+                <a href="#tracking">Track Order</a>
+            </div>
+            <div class="footer-column">
+                <h3>Categories</h3>
+                <a href="#menu">Fast Food</a>
+                <a hre f="#menu">Chicken & Fish</a>
+                <a href="#menu">Sweets</a>
+                <a href="#menu">Breakfast</a>
+                <a href="#menu">Drinks</a>
+            </div>
+            <div class="footer-column">
+                <h3>Support</h3>
+                <a href="#">Help Center</a>
+                <a href="#">Contact Us</a>
+                <a href="#">FAQs</a>
+                <a href="#">Terms & Conditions</a>
+                <a href="#">Privacy Policy</a>
+            </div>
+            <div class="footer-column">
+                <h3>We Deliver To</h3>
+                <a href="#">Bole</a>
+                <a href="#">Kazanchis</a>
+                <a href="#">Yeka</a>
+                <a href="#">Megenagna</a>
+                <a href="#">& More Areas</a>
+            </div>
+
+        </div>
+        <div class="footer-bottom">
+
+            <p>
+                © 2026 Addis Eats. All rights reserved.
+            </p>
+
+        </div>
+
+    </footer>
+    <div id="cart-overlay" class="cart-overlay"></div>
+    <aside id="cart-panel" class="cart-panel">
+
+        <div class="cart-header">
+            <h2>Your Cart</h2>
+
+            <button type="button" id="cart-close" aria-label="Close shopping cart">
+                ×
+            </button>
+        </div>
+
+        <div id="cart-items" class="cart-items">
+            <p>Your cart is empty.</p>
+        </div>
+
+        <div class="cart-footer">
+
+            <div class="cart-summary">
+
+                <div class="summary-row">
+                    <span>Subtotal</span>
+                    <span id="cart-subtotal">0 ETB</span>
+                </div>
+
+                <div class="summary-row">
+                    <span>Delivery Fee</span>
+                    <span id="delivery-fee">0 ETB</span>
+                </div>
+
+                <div class="summary-divider"></div>
+
+                <div class="cart-total-row">
+                    <span>Total</span>
+                    <strong id="cart-total">0 ETB</strong>
+                </div>
+
+            </div>
+
+            <button type="button" id="checkout-button" class="checkout-button">
+                Checkout
+            </button>
+
+        </div>
+
+    </aside>
+    <div id="checkout-overlay" class="checkout-overlay"></div>
+    <section id="checkout-panel" class="checkout-panel">
+
+        <div class="checkout-header">
+            <h2>Checkout</h2>
+
+            <button type="button" id="checkout-close" class="checkout-close" aria-label="Close checkout">
+                ×
+            </button>
+        </div>
+
+
+        <form id="checkout-form" class="checkout-form">
+
+            <div class="checkout-section">
+                <h3>Customer Information</h3>
+
+                <label for="customer-name">
+                    Full Name
+                </label>
+
+                <input type="text" id="customer-name" name="name" placeholder="Enter your name" required>
+
+
+                <label for="customer-phone">
+                    Phone Number
+                </label>
+
+                <input type="tel" id="customer-phone" name="phone" placeholder="09XXXXXXXX" required>
+
+
+                <label for="customer-address">
+                    Delivery Address
+                </label>
+
+                <textarea id="customer-address" name="address" placeholder="Enter your delivery address" rows="3"
+                    required></textarea>
+
+            </div>
+
+
+            <div class="checkout-section">
+
+                <h3>Payment Method</h3>
+
+                <label class="payment-option">
+
+                    <input type="radio" name="payment" value="cash" checked>
+
+                    <span>Cash on Delivery</span>
+
+                </label>
+
+
+                <label class="payment-option">
+
+                    <input type="radio" name="payment" value="telebirr">
+
+                    <span>Telebirr</span>
+
+                </label>
+
+            </div>
+
+
+            <div class="checkout-summary">
+
+                <div>
+                    <span>Subtotal</span>
+                    <strong id="checkout-subtotal">0 ETB</strong>
+                </div>
+
+                <div>
+                    <span>Delivery</span>
+                    <strong>50 ETB</strong>
+                </div>
+
+                <div class="checkout-final-total">
+                    <span>Total</span>
+                    <strong id="checkout-total">0 ETB</strong>
+                </div>
+
+            </div>
+
+
+            <button type="submit" class="place-order-button">
+                Place Order
+            </button>
+
+        </form>
+
+    </section>
+    <section id="order-confirmation" class="order-confirmation">
+
+        <div class="confirmation-card">
+
+            <div class="confirmation-icon">
+                ✓
+            </div>
+
+            <h2>Order Confirmed!</h2>
+
+            <p>
+                Thank you for ordering from Addis Eats.
+            </p>
+
+            <div class="order-number">
+                <span>Order ID</span>
+                <strong id="confirmation-order-id"></strong>
+            </div>
+
+            <div class="confirmation-details">
+                <div>
+                    <span>Total</span>
+                    <strong id="confirmation-total"></strong>
+                </div>
+
+                <div>
+                    <span>Status</span>
+                    <strong>Confirmed</strong>
+                </div>
+            </div>
+
+            <button type="button" id="track-order-button" class="checkout-button">
+                Track Order
+            </button>
+
+        </div>
+
+    </section>
+    <div id="food-modal-overlay" class="food-modal-overlay"></div>
+    <div id="food-modal" class="food-modal" role="dialog" aria-modal="true" aria-labelledby="food-modal-title">
+        <button type="button" id="food-modal-close" class="food-modal-close" aria-label="Close">
+            ×
+        </button>
+
+        <div class="food-modal-image">
+            <img id="food-modal-image" src="" alt="">
+        </div>
+
+        <div class="food-modal-body">
+            <span class="food-category" id="food-modal-category"></span>
+            <h3 id="food-modal-title"></h3>
+            <p id="food-modal-description"></p>
+
+            <div class="food-modal-ingredients">
+                <h4>Ingredients</h4>
+                <ul id="food-modal-ingredients-list"></ul>
+            </div>
+        </div>
+    </div>
+    <script src="app.js"></script>
+</body>
+
+
+</html>

@@ -1,0 +1,815 @@
+[
+    {
+        "id": 1,
+        "name": "Beef Burger",
+        "category": "fast-food",
+        "type": "burger",
+        "description": "Juicy beef burger with a toasted bun, fresh vegetables and savory sauce.",
+        "price": 690,
+        "ingredients": [
+            "beef patty",
+            "burger bun",
+            "lettuce",
+            "tomato",
+            "onion",
+            "sauce"
+        ],
+        "image": "../images/burger1.png",
+        "isPopular": false,
+        "offer": null
+    },
+    {
+        "id": 2,
+        "name": "Grilled Fish",
+        "category": "chicken-fish",
+        "type": "fish",
+        "description": "Grilled fish seasoned with herbs and spices and served with fresh garnish.",
+        "price": 500,
+        "ingredients": [
+            "fish",
+            "seasoning",
+            "herbs",
+            "oil",
+            "lemon"
+        ],
+        "image": "../images/fish.jpeg",
+        "isPopular": false,
+        "offer": null
+    },
+    {
+        "id": 3,
+        "name": "Kitfo",
+        "category": "traditional-food",
+        "type": "traditional",
+        "description": "Ethiopian minced beef dish seasoned with spiced butter and mitmita.",
+        "price": 1200,
+        "ingredients": [
+            "minced beef",
+            "spiced butter",
+            "mitmita",
+            "ayib",
+            "greens"
+        ],
+        "image": "../images/kitifo.webp",
+        "isPopular": false,
+        "offer": null
+    },
+    {
+        "id": 4,
+        "name": "Cheesecake",
+        "category": "sweets",
+        "type": "cake",
+        "description": "Creamy cheesecake served with fresh berries and a sweet topping.",
+        "price": 250,
+        "ingredients": [
+            "cake",
+            "flour",
+            "sugar",
+            "eggs",
+            "butter",
+            "frosting"
+        ],
+        "image": "../images/cheese cake.jpeg",
+        "isPopular": false,
+        "offer": null
+    },
+    {
+        "id": 5,
+        "name": "Dulet",
+        "category": "traditional-food",
+        "type": "traditional",
+        "description": "Ethiopian chopped meat dish prepared with spices and herbs.",
+        "price":700,
+        "ingredients": [
+            "minced meat",
+            "liver",
+            "tripe",
+            "onion",
+            "peppers",
+            "Ethiopian spices"
+        ],
+        "image": "../images/Dulet.jpeg",
+        "isPopular": false,
+        "offer": null
+    },
+    {
+        "id": 6,
+        "name": "Coffee",
+        "category": "drinks",
+        "type": "coffee",
+        "description": "Freshly brewed coffee served hot with a rich roasted aroma.",
+        "price": 70,
+        "ingredients": [
+            "coffee beans",
+            "water"
+        ],
+        "image": "../images/coffee.jpeg",
+        "isPopular": false,
+        "offer": null
+    },
+    {
+        "id": 7,
+        "name": "Pancakes",
+        "category": "breakfast",
+        "type": "breakfast",
+        "description": "Fluffy pancakes served with syrup and a side of fresh fruit.",
+        "price": 250,
+        "ingredients": [
+            "flour",
+            "eggs",
+            "milk",
+            "sugar",
+            "butter"
+        ],
+        "image": "../images/Pancakes.jpg",
+        "isPopular": false,
+        "offer": null
+    },
+    {
+        "id": 8,
+        "name": "Beer",
+        "category": "drinks",
+        "type": "drinks",
+        "description": "A selection of chilled bottled beers.",
+        "price": 80,
+        "ingredients": [
+            "brewed malt",
+            "hops",
+            "water",
+            "yeast"
+        ],
+        "image": "../images/beer.webp",
+        "isPopular": false,
+        "offer": null
+    },
+    {
+        "id": 9,
+        "name": "Cheesy Pizza",
+        "category": "fast-food",
+        "type": "800",
+        "description": "Cheesy pizza topped with tomato sauce and a generous layer of melted cheese.",
+        "price": null,
+        "ingredients": [
+            "pizza dough",
+            "tomato sauce",
+            "mozzarella cheese",
+            "toppings"
+        ],
+        "image": "../images/pizza.jpeg",
+        "isPopular": false,
+        "offer": null
+    },
+    {
+        "id": 10,
+        "name": "Sambusa",
+        "category": "fast-food",
+        "type": "sambusa",
+        "description": "Crispy golden sambusa filled with a savory spiced filling.",
+        "price": 50,
+        "ingredients": [
+            "sambusa pastry",
+            "seasoned filling",
+            "onion",
+            "spices",
+            "oil"
+        ],
+        "image": "../images/sambusa.jpg",
+        "isPopular": false,
+        "offer": null
+    },
+    {
+        "id": 11,
+        "name": "Fried Chicken",
+        "category": "chicken-fish",
+        "type": "1800",
+        "description": "Crispy fried chicken pieces with a golden seasoned coating.",
+        "price": 1900,
+        "ingredients": [
+            "chicken",
+            "seasoning",
+            "herbs",
+            "oil"
+        ],
+        "image": "../images/kfc.png",
+        "isPopular": false,
+        "offer": null
+    },
+    {
+        "id": 12,
+        "name": "Red Velvet Cake",
+        "category": "sweets",
+        "type": "cake",
+        "description": "Moist red velvet cake layered with creamy frosting.",
+        "price": 250,
+        "ingredients": [
+            "cake",
+            "flour",
+            "sugar",
+            "eggs",
+            "butter",
+            "frosting"
+        ],
+        "image": "../images/RedVelvet.webp",
+        "isPopular": false,
+        "offer": null
+    },
+    {
+        "id": 13,
+        "name": "Fried Eggs Breakfast",
+        "category": "breakfast",
+        "type": "eggs",
+        "description": "Fried eggs served with a selection of breakfast sides and fresh vegetables.",
+        "price": 180,
+        "ingredients": [
+            "eggs",
+            "onion",
+            "tomato",
+            "peppers",
+            "seasoning"
+        ],
+        "image": "../images/fried eggs.jpeg",
+        "isPopular": false,
+        "offer": null
+    },
+    {
+        "id": 14,
+        "name": "Waffles",
+        "category": "breakfast",
+        "type": "waffles",
+        "description": "Golden waffles served with fruit and a sweet topping.",
+        "price": 250,
+        "ingredients": [
+            "flour",
+            "eggs",
+            "milk",
+            "butter",
+            "sugar"
+        ],
+        "image": "../images/Waffles.jpg",
+        "isPopular": false,
+        "offer": null
+    },
+    {
+        "id": 15,
+        "name": "Savory Breakfast Bowl",
+        "category": "breakfast",
+        "type": "breakfast-bowl",
+        "description": "A savory breakfast bowl with eggs, vegetables and assorted breakfast sides.",
+        "price": 400,
+        "ingredients": [
+            "eggs",
+            "vegetables",
+            "potatoes",
+            "seasoning"
+        ],
+        "image": "../images/Savory-Breakfast-Bowls.jpg",
+        "isPopular": false,
+        "offer": null
+    },
+    {
+        "id": 16,
+        "name": "Meatball Pasta",
+        "category": "fast-food",
+        "type": "450",
+        "description": "Pasta topped with meatballs and a rich tomato-based sauce.",
+        "price": 600,
+        "ingredients": [
+            "pasta",
+            "tomato sauce",
+            "cheese",
+            "herbs"
+        ],
+        "image": "../images/meat ball pasta.jpg",
+        "isPopular": false,
+        "offer": null
+    },
+    {
+        "id": 17,
+        "name": "Cheesy Pizza Slice",
+        "category": "fast-food",
+        "type": "pizza",
+        "description": "Loaded pizza with tomato sauce, melted cheese and savory toppings.",
+        "price": 900,
+        "ingredients": [
+            "pizza dough",
+            "tomato sauce",
+            "mozzarella cheese",
+            "toppings"
+        ],
+        "image": "../images/pizza2.jpg",
+        "isPopular": false,
+        "offer": null
+    },
+    {
+        "id": 18,
+        "name": "Grilled Chicken",
+        "category": "chicken-fish",
+        "type": "chicken",
+        "description": "Grilled chicken pieces served with herbs and a savory seasoning.",
+        "price": 2800,
+        "ingredients": [
+            "chicken",
+            "seasoning",
+            "herbs",
+            "oil"
+        ],
+        "image": "../images/chicken.jpeg",
+        "isPopular": false,
+        "offer": null
+    },
+    {
+        "id": 19,
+        "name": "Shiro",
+        "category": "traditional-food",
+        "type": "traditional",
+        "description": "Ethiopian shiro stew prepared with seasoned chickpea flour and spices.",
+        "price": 200,
+        "ingredients": [
+            "shiro flour",
+            "onion",
+            "garlic",
+            "berbere",
+            "spiced butter"
+        ],
+        "image": "../images/shiro.jpeg",
+        "isPopular": false,
+        "offer": null
+    },
+    {
+        "id": 20,
+        "name": "Classic Burger",
+        "category": "fast-food",
+        "type": "burger",
+        "description": "Juicy burger with a toasted bun, fresh vegetables and savory sauce.",
+        "price": 700,
+        "ingredients": [
+            "beef patty",
+            "burger bun",
+            "lettuce",
+            "tomato",
+            "onion",
+            "sauce"
+        ],
+        "image": "../images/burger3.png",
+        "isPopular": false,
+        "offer": null
+    },
+    {
+        "id": 21,
+        "name": "Firfir",
+        "category": "traditional-food",
+        "type": "traditional",
+        "description": "Ethiopian injera pieces mixed with seasoned sauce and served with a flavorful topping.",
+        "price": 170,
+        "ingredients": [
+            "injera",
+            "berbere sauce",
+            "spiced butter",
+            "onion"
+        ],
+        "image": "../images/ferfer.jpg",
+        "isPopular": false,
+        "offer": null
+    },
+    {
+        "id": 22,
+        "name": "Awaze Tibs",
+        "category": "traditional-food",
+        "type": "tibs",
+        "description": "Tender pieces of meat cooked with awaze, spices and vegetables.",
+        "price": 500,
+        "ingredients": [
+            "beef",
+            "onion",
+            "peppers",
+            "awaze",
+            "spices"
+        ],
+        "image": "../images/Awaze-Tibs.jpg",
+        "isPopular": false,
+        "offer": null
+    },
+    {
+        "id": 23,
+        "name": "Cheese Burger",
+        "category": "fast-food",
+        "type": "burger",
+        "description": "Juicy beef burger with melted cheese, fresh vegetables and sauce.",
+        "price":850,
+        "ingredients": [
+            "beef patty",
+            "burger bun",
+            "lettuce",
+            "tomato",
+            "onion",
+            "sauce"
+        ],
+        "image": "../images/burger2.png",
+        "isPopular": false,
+        "offer": null
+    },
+    {
+        "id": 24,
+        "name": "Caramel Coffee Cake",
+        "category": "sweets",
+        "type": "cake",
+        "description": "Soft coffee cake layered with caramel and a rich sweet topping.",
+        "price": 250,
+        "ingredients": [
+            "cake",
+            "flour",
+            "sugar",
+            "eggs",
+            "butter",
+            "frosting"
+        ],
+        "image": "../images/caramel coffee cake.jpeg",
+        "isPopular": false,
+        "offer": null
+    },
+    {
+        "id": 25,
+        "name": "Fresh Fruit Juice",
+        "category": "drinks",
+        "type": "juice",
+        "description": "Refreshing fruit juices served chilled in a colorful selection.",
+        "price": 280,
+        "ingredients": [
+            "fresh fruit",
+            "water",
+            "ice"
+        ],
+        "image": "../images/fruit juice.jpg",
+        "isPopular": false,
+        "offer": null
+    },
+    {
+        "id": 26,
+        "name": "Chocolate Cake",
+        "category": "sweets",
+        "type": "cake",
+        "description": "Rich chocolate cake with a smooth chocolate topping.",
+        "price": 280,
+        "ingredients": [
+            "cake",
+            "flour",
+            "sugar",
+            "eggs",
+            "butter",
+            "frosting"
+        ],
+        "image": "../images/chocolate cake.jpeg",
+        "isPopular": false,
+        "offer": null
+    },
+    {
+        "id": 27,
+        "name": "Gomen",
+        "category": "traditional-food",
+        "type": "vegetarian",
+        "description": "Seasoned Ethiopian collard greens cooked with aromatic spices.",
+        "price": 200,
+        "ingredients": [
+            "collard greens",
+            "garlic",
+            "onion",
+            "spices",
+            "oil"
+        ],
+        "image": "../images/gomen.jpg",
+        "isPopular": false,
+        "offer": null
+    },
+    {
+        "id": 28,
+        "name": "BBQ Chicken Pizza",
+        "category": "fast-food",
+        "type": "pizza",
+        "description": "Pizza topped with BBQ chicken, melted cheese and savory toppings.",
+        "price": 1000,
+        "ingredients": [
+            "pizza dough",
+            "tomato sauce",
+            "mozzarella cheese",
+            "toppings"
+        ],
+        "image": "../images/BBQ-Chicken-Pizza-4.jpg",
+        "isPopular": false,
+        "offer": null
+    },
+    {
+        "id": 29,
+        "name": "Milk",
+        "category": "drinks",
+        "type": "milk",
+        "description": "Fresh milk served chilled and ready to enjoy.",
+        "price": 120,
+        "ingredients": [
+            "milk"
+        ],
+        "image": "../images/milk.jpeg",
+        "isPopular": false,
+        "offer": null
+    },
+    {
+        "id": 30,
+        "name": "BBQ Masala Fish",
+        "category": "chicken-fish",
+        "type": "fish",
+        "description": "Grilled fish seasoned with bold masala spices and served with fresh sides.",
+        "price":720,
+        "ingredients": [
+            "fish",
+            "seasoning",
+            "herbs",
+            "oil",
+            "lemon"
+        ],
+        "image": "../images/BBQ masala fish.jpeg",
+        "isPopular": false,
+        "offer": null
+    },
+    {
+        "id": 31,
+        "name": "Fresh Salad",
+        "category": "breakfast",
+        "type": "salad",
+        "description": "Fresh mixed salad with crisp vegetables and a light dressing.",
+        "price": 350,
+        "ingredients": [
+            "lettuce",
+            "tomato",
+            "cucumber",
+            "carrot",
+            "dressing"
+        ],
+        "image": "../images/salad.jpg",
+        "isPopular": false,
+        "offer": null
+    },
+    {
+        "id": 32,
+        "name": "Stir-Fried Noodles",
+        "category": "fast-food",
+        "type": "noodles",
+        "description": "Stir-fried noodles mixed with vegetables and savory seasoning.",
+        "price": 1200,
+        "ingredients": [
+            "noodles",
+            "mixed vegetables",
+            "soy sauce",
+            "seasoning"
+        ],
+        "image": "../images/noodles.jpeg",
+        "isPopular": false,
+        "offer": null
+    },
+    {
+        "id": 33,
+        "name": "Soft Drinks",
+        "category": "drinks",
+        "type": "soft-drink",
+        "description": "A selection of chilled carbonated soft drinks.",
+        "price": 100,
+        "ingredients": [
+            "carbonated water",
+            "flavoring",
+            "sweetener"
+        ],
+        "image": "../images/softdrink.webp",
+        "isPopular": false,
+        "offer": null
+    },
+    {
+        "id": 34,
+        "name": "Ethiopian Scrambled Eggs",
+        "category": "breakfast",
+        "type": "eggs",
+        "description": "Scrambled eggs prepared with Ethiopian-style spices and vegetables.",
+        "price": 220,
+        "ingredients": [
+            "eggs",
+            "onion",
+            "tomato",
+            "green pepper",
+            "Ethiopian spices"
+        ],
+        "image": "../images/Ethiopian-Scrambled-Eggs.jpg",
+        "isPopular": false,
+        "offer": null
+    },
+    {
+        "id": 35,
+        "name": "Tiramisu",
+        "category": "sweets",
+        "type": "tiramisu",
+        "description": "Layered tiramisu with coffee-soaked cake and creamy topping.",
+        "price": 250,
+        "ingredients": [
+            "coffee",
+            "mascarpone",
+            "ladyfingers",
+            "cocoa"
+        ],
+        "image": "../images/tiramisu.jpeg",
+        "isPopular": false,
+        "offer": null
+    },
+    {
+        "id": 36,
+        "name": "Cocktails",
+        "category": "drinks",
+        "type": "cocktail",
+        "description": "Colorful mixed drinks served chilled with fresh garnishes.",
+        "price": 300,
+        "ingredients": [
+            "mixed fruit juice",
+            "ice",
+            "garnish"
+        ],
+        "image": "../images/cocktails.jpeg",
+        "isPopular": false,
+        "offer": null
+    },
+    {
+        "id": 37,
+        "name": "Wine",
+        "category": "drinks",
+        "type": "wine",
+        "description": "A selection of bottled wines served chilled or at the appropriate temperature.",
+        "price": 1100,
+        "ingredients": [
+            "grapes"
+        ],
+        "image": "../images/wine.jpeg",
+        "isPopular": false,
+        "offer": null
+    },
+    {
+        "id": 38,
+        "name": "Chocolate Pizza",
+        "category": "sweets",
+        "type": "dessert-pizza",
+        "description": "Sweet pizza topped with chocolate and crunchy toppings.",
+        "price": 500,
+        "ingredients": [
+            "pizza dough",
+            "chocolate",
+            "sweet toppings"
+        ],
+        "image": "../images/chocolate pizza.jpeg",
+        "isPopular": false,
+        "offer": null
+    },
+    {
+        "id": 39,
+        "name": "Croissant Breakfast",
+        "category": "breakfast",
+        "type": "pastry",
+        "description": "Flaky croissant served with a selection of breakfast accompaniments.",
+        "price": 190,
+        "ingredients": [
+            "croissant dough",
+            "butter",
+            "flour",
+            "eggs"
+        ],
+        "image": "../images/croissant.jpeg",
+        "isPopular": false,
+        "offer": null
+    },
+    {
+        "id": 40,
+        "name": "Lasagna",
+        "category": "fast-food",
+        "type": "pasta",
+        "description": "Layered pasta with rich sauce, cheese and savory filling.",
+        "price": 450,
+        "ingredients": [
+            "pasta",
+            "tomato sauce",
+            "cheese",
+            "herbs"
+        ],
+        "image": "../images/lazagna.jpeg",
+        "isPopular": false,
+        "offer": null
+    },
+    {
+        "id": 41,
+        "name": "Full Breakfast",
+        "category": "breakfast",
+        "type": "breakfast",
+        "description": "A full breakfast platter with eggs, vegetables, bread and assorted sides.",
+        "price": 600,
+        "ingredients": [
+            "eggs",
+            "bread",
+            "vegetables",
+            "seasoning"
+        ],
+        "image": "../images/breakfast.jpg",
+        "isPopular": false,
+        "offer": null
+    },
+    {
+        "id": 42,
+        "name": "Roasted Chicken",
+        "category": "chicken-fish",
+        "type": "chicken",
+        "description": "Tender roasted chicken with a seasoned golden skin.",
+        "price": 2400,
+        "ingredients": [
+            "chicken",
+            "seasoning",
+            "herbs",
+            "oil"
+        ],
+        "image": "../images/roasted-chicken.jpg",
+        "isPopular": false,
+        "offer": null
+    },
+    {
+        "id": 43,
+        "name": "Chocolate Chip Cookies",
+        "category": "sweets",
+        "type": "cookies",
+        "description": "Soft baked cookies filled with chocolate chips.",
+        "price": 280,
+        "ingredients": [
+            "flour",
+            "butter",
+            "sugar",
+            "chocolate chips"
+        ],
+        "image": "../images/chocolate chip cookies.jpg",
+        "isPopular": false,
+        "offer": null
+    },
+    {
+        "id": 44,
+        "name": "Tej",
+        "category": "drinks",
+        "type": "traditional-drink",
+        "description": "Ethiopian honey wine served in a traditional style.",
+        "price": 110,
+        "ingredients": [
+            "honey",
+            "water",
+            "gesho"
+        ],
+        "image": "../images/tej.jpeg",
+        "isPopular": false,
+        "offer": null
+    },
+    {
+        "id": 45,
+        "name": "Tea",
+        "category": "drinks",
+        "type": "tea",
+        "description": "Hot brewed tea served with a fresh, comforting aroma.",
+        "price": 120,
+        "ingredients": [
+            "tea leaves",
+            "water"
+        ],
+        "image": "../images/tea.jpg",
+        "isPopular": false,
+        "offer": null
+    },
+    {
+        "id": 46,
+        "name": "Chocolate Muffins",
+        "category": "sweets",
+        "type": "muffins",
+        "description": "Soft chocolate muffins with a rich cocoa flavor.",
+        "price": 180,
+        "ingredients": [
+            "flour",
+            "cocoa",
+            "sugar",
+            "eggs",
+            "butter"
+        ],
+        "image": "../images/muffins.jpg",
+        "isPopular": false,
+        "offer": null
+    },
+    {
+        "id": 47,
+        "name": "Whole Rotisserie Chicken",
+        "category": "chicken-fish",
+        "type": "chicken",
+        "description": "Whole roasted chicken cooked until golden and tender.",
+        "price": 1900,
+        "ingredients": [
+            "chicken",
+            "seasoning",
+            "herbs",
+            "oil"
+        ],
+        "image": "../images/original-rotisserie-oven-whole-chicken-mobile.webp",
+        "isPopular": false,
+        "offer": null
+    }
+]

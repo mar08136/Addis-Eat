@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Addis Eats | Admin Dashboard</title>
+    <link rel="stylesheet" href="admin.css">
+</head>
+
+<body>
+    <div class="admin-dashboard" id="admin-dashboard">
+        <aside class="admin-sidebar" id="admin-sidebar">
+            <div class="admin-logo">
+                <h1>Addis Eats</h1>
+                <span>Admin Panel</span>
+            </div>
+            <nav class="admin-nav" id="admin-nav">
+                <a href="#dashboard" class="admin-nav-link active"><span
+                        class="nav-icon">⌂</span><span>Dashboard</span></a>
+                <a href="#menu-management" class="admin-nav-link"><span class="nav-icon">🍴</span><span>Menu</span></a>
+                <a href="#orders" class="admin-nav-link"><span class="nav-icon">📦</span><span>Orders</span></a>
+                <a href="#analytics" class="admin-nav-link"><span class="nav-icon">📊</span><span>Analytics</span></a>
+            </nav>
+            <div class="admin-sidebar-bottom">
+                <a href="#settings" class="admin-nav-link"><span class="nav-icon">⚙</span><span>Settings</span></a>
+                <button type="button" class="admin-logout" id="admin-logout"><span
+                        class="nav-icon">↪</span><span>Logout</span></button>
+            </div>
+        </aside>
+        <main class="admin-main" id="dashboard">
+            <header class="admin-header">
+                <div class="admin-header-left">
+                    <button type="button" class="sidebar-toggle" id="sidebar-toggle"
+                        aria-label="Toggle sidebar">☰</button>
+                    <div>
+                        <span class="admin-page-label">ADMIN PANEL</span>
+                        <h2>Dashboard</h2>
+                    </div>
+                </div>
+                <div class="admin-header-right">
+                    <button type="button" class="admin-notification" id="admin-notification"
+                        aria-label="Notifications">🔔<span class="notification-badge"
+                            id="notification-badge">0</span></button>
+                    <div class="admin-profile" id="admin-profile">
+                        <div class="admin-profile-avatar">A</div>
+                        <div class="admin-profile-info">
+                            <strong id="admin-name">Admin</strong>
+                            <span>Administrator</span>
+                        </div>
+                    </div>
+                </div>
+            </header>
+            <section class="dashboard-content">
+                <div class="dashboard-heading">
+                    <div>
+                        <span class="section-label">OVERVIEW</span>
+                        <h1>Welcome back, Admin</h1>
+                        <p>Here's what's happening with Addis Eats today.</p>
+                    </div>
+                    <div class="dashboard-date" id="dashboard-date">Today</div>
+                </div>
+                <section class="dashboard-stats" id="analytics">
+                    <article class="stat-card revenue-card" id="revenue-card">
+                        <div class="stat-card-top"><span class="stat-title">Total Revenue</span><span
+                                class="stat-icon">💰</span></div>
+                        <div class="stat-value" id="total-revenue">0 ETB</div>
+                        <div class="stat-change positive"><span>↑</span><span id="revenue-change">0%</span><small>from
+                                last period</small></div>
+                    </article>
+                    <article class="stat-card orders-card" id="orders-card">
+                        <div class="stat-card-top"><span class="stat-title">Total Orders</span><span
+                                class="stat-icon">📦</span></div>
+                        <div class="stat-value" id="total-orders">0</div>
+                        <div class="stat-change positive"><span>↑</span><span id="orders-change">0%</span><small>from
+                                last period</small></div>
+                    </article>
+                    <article class="stat-card average-card" id="average-order-card">
+                        <div class="stat-card-top"><span class="stat-title">Average Order</span><span
+                                class="stat-icon">🧾</span></div>
+                        <div class="stat-value" id="average-order-value">0 ETB</div>
+                        <div class="stat-change positive"><span>↑</span><span id="average-change">0%</span><small>from
+                                last period</small></div>
+                    </article>
+                    <article class="stat-card customers-card" id="customers-card">
+                        <div class="stat-card-top"><span class="stat-title">Customers</span><span
+                                class="stat-icon">👥</span></div>
+                        <div class="stat-value" id="total-customers">0</div>
+                        <div class="stat-change positive"><span>↑</span><span id="customers-change">0%</span><small>from
+                                last period</small></div>
+                    </article>
+                </section>
+                <div class="dashboard-grid">
+                    <section class="dashboard-panel top-selling" id="top-selling">
+                        <div class="panel-header">
+                            <div><span class="section-label">BEST PERFORMERS</span>
+                                <h2>Top Selling Dishes</h2>
+                            </div>
+                            <button type="button" class="panel-action" id="view-menu-button">View Menu</button>
+                        </div>
+                        <div class="top-selling-list" id="top-selling-list"></div>
+                    </section>
+                    <section class="dashboard-panel order-status" id="order-status-distribution">
+                        <div class="panel-header">
+                            <div><span class="section-label">ORDER OVERVIEW</span>
+                                <h2>Order Status</h2>
+                            </div>
+                            <span class="total-order-count"><strong id="status-total-orders">0</strong> orders</span>
+                        </div>
+                        <div class="status-chart-container">
+                            <div class="status-chart" id="status-chart">
+                                <div class="status-chart-center"><strong
+                                        id="status-chart-total">0</strong><span>Orders</span></div>
+                            </div>
+                        </div>
+                        <div class="status-list" id="status-list">
+                            <div class="status-item" data-status="confirmed"><span
+                                    class="status-dot confirmed"></span><span
+                                    class="status-name">Confirmed</span><strong id="confirmed-count">0</strong></div>
+                            <div class="status-item" data-status="preparing"><span
+                                    class="status-dot preparing"></span><span
+                                    class="status-name">Preparing</span><strong id="preparing-count">0</strong></div>
+                            <div class="status-item" data-status="on-the-way"><span
+                                    class="status-dot on-the-way"></span><span class="status-name">On the
+                                    Way</span><strong id="on-the-way-count">0</strong></div>
+                            <div class="status-item" data-status="delivered"><span
+                                    class="status-dot delivered"></span><span
+                                    class="status-name">Delivered</span><strong id="delivered-count">0</strong></div>
+                        </div>
+                    </section>
+                </div>
+                <section class="dashboard-panel recent-orders" id="recent-orders">
+                    <div class="panel-header">
+                        <div><span class="section-label">LATEST ACTIVITY</span>
+                            <h2>Recent Orders</h2>
+                        </div>
+                        <a href="#orders" class="panel-action">View All Orders</a>
+                    </div>
+                    <div class="orders-table-wrapper">
+                        <table class="orders-table" id="recent-orders-table">
+                            <thead>
+                                <tr>
+                                    <th>Order ID</th>
+                                    <th>Customer</th>
+                                    <th>Items</th>
+                                    <th>Total</th>
+                                    <th>Status</th>
+                                    <th>Date</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody id="recent-orders-body"></tbody>
+                        </table>
+                    </div>
+                </section>
+                <section class="dashboard-panel" id="menu-management">
+                    <div class="panel-header">
+                        <div><span class="section-label">RESTAURANT MENU</span>
+                            <h2>Menu Management</h2>
+                        </div>
+                        <button type="button" class="panel-action" id="add-menu-button">+ Add Menu Item</button>
+                    </div>
+                    <div class="admin-menu-controls">
+                        <input type="search" id="admin-menu-search" placeholder="Search menu...">
+                        <div class="admin-menu-filters">
+                            <button type="button" class="admin-menu-filter active" data-category="all">All</button>
+                            <button type="button" class="admin-menu-filter" data-category="fast food">Fast Food</button>
+                            <button type="button" class="admin-menu-filter" data-category="chicken and fish">Chicken &
+                                Fish</button>
+                            <button type="button" class="admin-menu-filter" data-category="sweets">Sweets</button>
+                            <button type="button" class="admin-menu-filter" data-category="breakfast">Breakfast</button>
+                            <button type="button" class="admin-menu-filter" data-category="drinks">Drinks</button>
+                        </div>
+                    </div>
+                    <div class="admin-menu-grid" id="admin-menu-grid"></div>
+                </section>
+                <section class="dashboard-panel" id="orders">
+                    <div class="panel-header">
+                        <div><span class="section-label">ORDER MANAGEMENT</span>
+                            <h2>Track Orders</h2>
+                        </div>
+                    </div>
+                    <div class="admin-order-controls">
+                        <input type="search" id="order-search" placeholder="Search order or customer...">
+                        <select id="order-status-filter">
+                            <option value="all">All Statuses</option>
+                            <option value="confirmed">Confirmed</option>
+                            <option value="preparing">Preparing</option>
+                            <option value="on-the-way">On the Way</option>
+                            <option value="delivered">Delivered</option>
+                            <option value="cancelled">Cancelled</option>
+                        </select>
+                    </div>
+                    <div class="orders-container" id="orders-container"></div>
+                </section>
+                <section class="dashboard-panel" id="settings">
+                    <div class="panel-header">
+                        <div><span class="section-label">ACCOUNT</span>
+                            <h2>Settings</h2>
+                        </div>
+                    </div>
+                    <div class="admin-settings">
+                        <p><strong>Admin account</strong></p>
+                        <p>You are currently signed in as Administrator.</p>
+                        <button type="button" class="admin-logout" id="settings-logout">Logout</button>
+                    </div>
+                </section>
+            </section>
+        </main>
+    </div>
+    <script src="admin.js"></script>
+</body>
+
+</html>
